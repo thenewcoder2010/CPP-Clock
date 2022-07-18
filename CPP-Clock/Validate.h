@@ -12,8 +12,7 @@
 #include <string>
 
 bool validate(int day, std::string month, int year) { // The code will return true if the date is valid and false if it is not valid
-    std::cout << "I AM ALIVE!\n";
-    std::string months[12] = {"January", "Feburary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+    std::string months[12] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     
     std::string months31[8] = {"January", "March", "May", "July", "August", "October", "December"};
     std::string months30[4] = {"April", "June", "September", "November"};
@@ -37,14 +36,18 @@ bool validate(int day, std::string month, int year) { // The code will return tr
     
     int arrSize = sizeof(months)/sizeof(months[0]);
     
+    std::cout << "arrSize is " << arrSize << "\n";
+    
     for (int i = 0; i < arrSize; i++) { // Checking whether the month is existent
-        if (month == months[arrSize]) {
+        if (month == months[i]) {
             validMonth = true;
             break;
         }
     }
     
-    if (validMonth != true) {
+    std::cout << "Valid month has a value of " << validMonth << "\n"; // The code is able to check that the month is valid
+    
+    if (validMonth != true && month != "February") {
         return false;
     }
     
