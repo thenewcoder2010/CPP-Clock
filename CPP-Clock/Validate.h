@@ -84,21 +84,19 @@ bool validate(int day, std::string month, int year) { // The code will return tr
         
     }
     
-    if (dayIs31 == true && day < 31) {
+    if (dayIs31 == true && day < 31) { // Verifying whether the date is more than 31
         validDay = true;
     }
     
-    else if (dayIs30 == true && day < 30) {
+    else if (dayIs30 == true && day < 30) { // Verifying whether the date is more than 30 if the month has 30 days
         validDay = true;
-    }
-    
-    else {
-        validDay = false;
     }
     
     if (validDay == true && validMonth == true) {
         return true;
     }
+    
+    return false;
 }
 
 #endif /* Validate_h */
